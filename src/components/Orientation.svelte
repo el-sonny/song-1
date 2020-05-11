@@ -16,3 +16,8 @@
 <svelte:window on:deviceorientation={handleOrientation}/>
 <p>Beta : {Math.round(x*100)}%</p>
 <p>Gamma: {Math.round(y*100)}%</p>
+<style>
+	p{
+		color:white;
+	}
+</style>
