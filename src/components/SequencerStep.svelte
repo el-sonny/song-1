@@ -4,7 +4,7 @@
 </script>
 <style>
 	.note{
-		background-color: #9A6D38;
+		background-color: #292F36;
 		display: block;
 		margin: 0 0 1px 0;
 		padding: 0;
@@ -14,10 +14,10 @@
 		border-radius: 0;
 	}
 	.note.active{
-		background: #19231A;
+		background: #4ECDC4;
 	}
 	.note.active.current{
-		background: #CC3F0C;
+		background: #FF6B6B;
 	}
 </style>
 {#each notes as note}
