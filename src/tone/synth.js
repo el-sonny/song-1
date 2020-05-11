@@ -2,8 +2,7 @@ import Tone from 'tone';
 //const EventEmitter = require('events');
 
 let vol = new Tone.Volume(-12).toMaster();
-let polySynth = new Tone.PolySynth(3, Tone.FMSynth).connect(vol);
-let emmiter = new EventEmitter();
+
 
 let seq = new Tone.Sequence((time,idx) => {emmiter.emit('newMeasure', {time:time,idx:idx})}
 	,[0,1,2,3,4,5,6,7,8,9,10,11],'1m');
