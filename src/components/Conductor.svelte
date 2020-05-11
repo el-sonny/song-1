@@ -7,12 +7,18 @@
 
 	const emmiter = createEventDispatcher();
 	let seq = new Tone.Sequence((time,idx) => emmiter('16th', {time:time,idx:idx}),[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15],'16n');
-
-	const start = () => {
-		Tone.Transport.latencyHint = 'fastest';
-		Tone.Transport.start('+0.1');
-	    seq.start();
-	};
+	$: label = 'Start';
+	const toggle = () => {
+		if(seq.state === 'stopped'){
+			Tone.Transport.latencyHint = 'fastest';
+			Tone.Transport.start('+0.1');
+			seq.start();
+			label = 'Stop';
+		}else{
+			seq.stop();
+			label = 'Start';
+		} 
+	}
 </script>
 
-<button on:click={start} >Play</button>
+<button on:click={toggle} >{label}</button>
